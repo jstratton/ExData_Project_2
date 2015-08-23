@@ -7,6 +7,7 @@
 
 # Load required packages for this assignment
 library(dplyr)
+library(ggplot2)
 
 # Load the particulate data set and source code identifiers
 NEI <- readRDS("summarySCC_PM25.rds")
@@ -41,14 +42,14 @@ total_cars$fips <- gsub(pattern = "06037", replacement = "Los Angeles County, MD
                         x = total_cars$fips)
 
 # Open the graphics device
-#png(filename = "Plot6.png", width = 640, height = 640)
+png(filename = "Plot6.png", width = 720, height = 720)
 
 # Make the Plot
-#myplot <- qplot(x = year, y = emissions, data = total_cars, facets = . ~ fips,
- #               main = "Comparison of Particulate Emissions due to Cars in Maryland, MD and Los Angeles, CA vs. Time",
-  #              xlab = "Year", ylab = "Total PM2.5 Emissions (Tons)")
+myplot <- qplot(x = year, y = emissions, data = total_cars, facets = . ~ fips,
+                main = "Comparison of Particulate Emissions due to Cars in Maryland, MD and Los Angeles, CA vs. Time",
+                xlab = "Year", ylab = "Total PM2.5 Emissions (Tons)")
 
 print(myplot)
 
 # Close the graphics device
-#dev.off()
+dev.off()
