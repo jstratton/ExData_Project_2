@@ -25,8 +25,9 @@ png(filename = "Plot1.png")
 ## I plotted the total emissions using millions of tons as my unit to get rid of
 ##      the ugly scientific notations that R was putting in by default.
 barplot(height = total_emissions$emissions/10^6, names.arg = total_emissions$year,
-        col = "red", main = "Total Emissions vs. Year", xlab = "Year",
-        ylab = "Total Emissions (Millions of Tons)", ylim = c(0, 8), axes = TRUE)
+        col = "red", main = "USA Fine Particulate Matter Emissions vs. Year",
+        xlab = "Year", ylab = "Total PM2.5 Emissions (Millions of Tons)", ylim = c(0, 8),
+        axes = TRUE)
 
 # Close the graphics device
 dev.off()
